@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, render_template, Response
 import requests
 import json
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -82,3 +83,5 @@ def chat():
 
 if __name__ == '__main__':
     app.run(port=5000)
+    ret=subprocess.run("ifconfig ",shell=True)
+    print(ret.stdout)
